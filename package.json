@@ -1,9 +1,9 @@
 {
-  "name": "magda-plugin-ui-component-examples",
+  "name": "magda-ui-plugin-component-dap-thumbnail-viewer",
   "version": "1.0.0",
-  "description": "Magda Plugin UI Components Examples",
+  "description": "Magda Plugin UI Component DAP Thumbnail Viewer",
   "main": "index.js",
-  "repository": "https://github.com/magda-io/magda-plugin-ui-component-examples",
+  "repository": "https://github.com/magda-io/magda-ui-plugin-component-dap-thumbnail-viewer",
   "author": "Jacky Jiang <jacky.jiang@data61.csiro.au>",
   "license": "Apache-2.0",
   "private": true,
@@ -13,6 +13,7 @@
     "start": "webpack serve --config webpack.dev.config.js"
   },
   "devDependencies": {
+    "@magda/external-ui-plugin-sdk": "^2.2.0-alpha.3",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",

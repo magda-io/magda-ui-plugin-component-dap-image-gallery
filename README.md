@@ -1,6 +1,11 @@
-# magda-ui-plugin-component-open-3d-dataset
+# magda-ui-plugin-component-dap-thumbnail-viewer
 
-A Magda UI Plugin Component that allows users to open 3D datasets from DT instances.
+A Magda UI Plugin Component that allows users to view the thumbnails of the files / distributions of datasets that are harvested from CSIRO DAP system.
+
+This plugin requires Magda v2.2.0 or higher.
+
+> Since Magda v2.2.0, users can load more than one "Extra Visualisation Section" type Magda UI Plugin Components. To allow this, the component is required to be packaged as a library and exported to global scope `MagdaPluginComponentExtraVisualisationSections.xxxx`. Here, `MagdaPluginComponentExtraVisualisationSections` should be an object with key `xxxx` set to the plugin component. e.g. the DAP thumbnail viewer plugin choose to export itself to `MagdaPluginComponentExtraVisualisationSections.DAPThumbnailViewer`.
+
 
 More about Magda UI Plugin Component see: https://github.com/magda-io/magda-plugin-ui-component-examples
 
@@ -27,11 +32,7 @@ yarn build
 ```yaml
 web-server:
   externalUIComponents:
-    - "https://exmaple.com/assets/libs/MagdaPluginComponentExtraVisualisationSection.js"
-  extraConfigData:
-    "3dDatasetDigitalTwinInstances":
-    - sourceDataDomain: "xxx.xx.xx"
-      url: "https://my.digitaltwin.com.au/"
+    - "https://exmaple.com/assets/libs/MagdaPluginComponentExtraVisualisationSections_DAPThumbnailViewer.js"
 ```
 
 You also need to configure Magda Gateway module `CSP` config accordingly to make sure scripts from `exmaple.com` are allowed. e.g.:

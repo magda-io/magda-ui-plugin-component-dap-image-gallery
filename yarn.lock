@@ -895,6 +895,11 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
   integrity sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
 
+"@magda/external-ui-plugin-sdk@^2.2.0-alpha.3":
+  version "2.2.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@magda/external-ui-plugin-sdk/-/external-ui-plugin-sdk-2.2.0-alpha.3.tgz#c490b5bc80321cf771d3b018d72188e2dc0a0fab"
+  integrity sha512-AWAtAlQX6h3YRZHv2ag+bfqhTdFcZ/mXTZQA6JdebaA3Ch9auJKM0BiXPKt+YDlkklA5bF3Jj0Z8G1gON+ebMQ==
+
 "@svgr/babel-plugin-add-jsx-attribute@^5.4.0":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-5.4.0.tgz#81ef61947bb268eb9d50523446f9c638fb355906"

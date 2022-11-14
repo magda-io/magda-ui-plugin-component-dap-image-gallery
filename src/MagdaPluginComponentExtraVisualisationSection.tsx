@@ -1,6 +1,6 @@
 import React from "react";
-import { ExtraVisualisationSectionComponentType } from "./externalComponents";
-import { ConfigType } from "./magdaCommon";
+import { ExtraVisualisationSectionComponentType } from "@magda/external-ui-plugin-sdk";
+import { ConfigDataType } from "@magda/external-ui-plugin-sdk";
 import urijs from "urijs";
 
 // we don't need to deifne all property here
@@ -48,7 +48,7 @@ type DTConfigType = {
 function createDTLink(
     dataset: DatasetDataType,
     disData: DistributionDataType,
-    configData: ConfigType
+    configData: ConfigDataType
 ): string | null {
     const { landingPage } = dataset;
     const { extraConfigData } = configData;

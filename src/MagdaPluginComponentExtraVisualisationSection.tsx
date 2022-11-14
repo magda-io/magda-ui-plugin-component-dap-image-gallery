@@ -1,169 +1,145 @@
-import React from "react";
+import React, { FunctionComponent, useState } from "react";
 import { ExtraVisualisationSectionComponentType } from "@magda/external-ui-plugin-sdk";
-import { ConfigDataType } from "@magda/external-ui-plugin-sdk";
-import urijs from "urijs";
+import { useAsync } from "react-async-hook";
+import requestJson from "./requestJson";
+import { CollectionResponse, CollectionFilesResponse, File } from "./DapTypes";
 
-// we don't need to deifne all property here
-// see Magda main repo for full definition
-type DatasetDataType = {
-    identifier: string;
-    landingPage?: string;
-    distributions?: DistributionDataType[];
-};
-
-// we don't need to deifne all property here
-// see Magda main repo for full definition
-type DistributionDataType = {
-    identifier: string;
-    format?: string;
-    downloadURL?: string;
-    accessURL?: string;
-};
-
-function validateDistribution(disData: DistributionDataType) {
-    const { format, downloadURL, accessURL } = disData;
-    if (!format || typeof format !== "string") {
-        return false;
+const FileThumbnailViewer: FunctionComponent<{ file: File }> = (props) => {
+    const { file } = props;
+    const [idx, setIdx] = useState<number>(0);
+    const thumbnails: {
+        label: string;
+        url: string;
+    }[] = [];
+    if (file?.smallThumbnail) {
+        thumbnails.push({
+            label: "Small",
+            url: file.smallThumbnail
+        });
     }
-    if (format.toLocaleLowerCase().trim() !== "esri sceneserver") {
-        return false;
+    if (file?.mediumThumbnail) {
+        thumbnails.push({
+            label: "Medium",
+            url: file.mediumThumbnail
+        });
     }
-    const url = downloadURL ? downloadURL : accessURL;
-    if (!url || typeof url !== "string") {
-        return false;
+    if (file?.largeThumbnail) {
+        thumbnails.push({
+            label: "Large",
+            url: file.largeThumbnail
+        });
     }
-    if (!url.match(/\W*SceneServer\W*/)) {
-        return false;
-    }
-    return true;
-}
-
-type DTConfigType = {
-    // determin which DT URL should be used. i.e. only when the source dataset url domain contains `sourceDataDomain`, the DT config entry will be matched.
-    // "*" or empty value or undefined means the DT entry can be used for any 3d datasets
-    sourceDataDomain?: string;
-    url: string;
-}[];
-
-function createDTLink(
-    dataset: DatasetDataType,
-    disData: DistributionDataType,
-    configData: ConfigDataType
-): string | null {
-    const { landingPage } = dataset;
-    const { extraConfigData } = configData;
-
-    if (!extraConfigData?.["3dDatasetDigitalTwinInstances"]?.length) {
-        console.log(
-            "Open 3D Dataset Button: cannot locate Digital Twin Config."
-        );
-        return null;
+    if (file?.fullThumbnail) {
+        thumbnails.push({
+            label: "Full",
+            url: file.fullThumbnail
+        });
     }
 
-    if (!landingPage || typeof landingPage !== "string") {
-        console.log("Open 3D Dataset Button: dataset landing page is empty.");
-        return null;
-    }
-
-    const uri = urijs(landingPage);
-    const sourceDomain = uri.host();
-    const itemId = uri.search(true)?.id;
-
-    if (!itemId) {
-        console.log(
-            "Open 3D Dataset Button: dataset landing page doesn't contains 3D item id."
-        );
-        return null;
-    }
-
-    const dtConfigData: DTConfigType =
-        extraConfigData["3dDatasetDigitalTwinInstances"];
-    const dtConfig = dtConfigData.find((item) => {
-        if (!item.sourceDataDomain || item.sourceDataDomain === "*") {
-            return true;
-        }
-        if (
-            typeof item.sourceDataDomain === "string" &&
-            sourceDomain.indexOf(item.sourceDataDomain) !== -1
-        ) {
-            return true;
-        }
-        return false;
-    });
-
-    if (!dtConfig || !dtConfig?.url) {
-        console.log("Open 3D Dataset Button: cannot find a matched DT config.");
-        return null;
-    }
-
-    return urijs(dtConfig.url).fragment(`magdaLayers=${itemId}`).toString();
-}
-
-const MagdaPluginComponentExtraVisualisationSection: ExtraVisualisationSectionComponentType =
-    (props) => {
-        const dataset: DatasetDataType = props.dataset;
-        const distributionId: string | undefined = props.distributionId;
-        const configData = props.config;
-
-        if (!dataset?.distributions?.length) {
-            // no distribution available
-            console.log("Open 3D Dataset Button: no distribution available.");
-            return null;
-        }
-
-        let selectedDis;
-
-        if (distributionId) {
-            selectedDis = dataset.distributions.find(
-                (item) => item?.identifier === distributionId
-            );
-            if (!selectedDis) {
-                console.log(
-                    "Open 3D Dataset Button: Cannot locate distribution with id: " +
-                        distributionId
-                );
-                return null;
-            }
-            if (!validateDistribution(selectedDis)) {
-                console.log(
-                    "Open 3D Dataset Button: the distribution doesn't contain a ESRI SceneServer API access url."
-                );
-                return null;
-            }
-        } else {
-            selectedDis = dataset.distributions.find((item) =>
-                validateDistribution(item)
-            );
-            if (!selectedDis) {
-                console.log(
-                    "Open 3D Dataset Button: the dataset has no supported 3D data distribution."
-                );
-                return null;
-            }
-        }
-
-        const dtLink = createDTLink(dataset, selectedDis, configData);
-        if (!dtLink) {
-            return null;
-        }
-
-        return (
-            <div className="no-print">
-                <h3 className="section-heading">Map Preview</h3>
-                <p>
-                    Map Preview cannot preview 3D datasets. Please click the
-                    button to view the 3D datasets in Digital Twin.
-                </p>
-                <a
-                    className="au-btn au-btn--secondary open-3d-dataset-in-dt-button"
-                    aria-label="Open 3D Dataset in Digital Twin"
-                    target="_blank"
-                    href={dtLink}
+    const thumbnailUrl = thumbnails?.[idx] ? thumbnails[idx].url : "";
+    console.log("thumbnails idx: ", idx, "thumbnailUrl: ", thumbnailUrl);
+    return (
+        <div
+            style={{
+                width: "100%",
+                height: "440px"
+            }}
+        >
+            <div
+                style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column"
+                }}
+            >
+                <select
+                    placeholder="Please select thumbnail..."
+                    onChange={(e) => setIdx(parseInt(e.target.value))}
                 >
-                    <span>Open 3D Dataset in Digital Twin</span>
-                </a>
-            </div>
-        );
-    };
+                    {thumbnails.map((item, itemIdx) => (
+                        <option
+                            key={itemIdx}
+                            value={itemIdx}
+                            selected={itemIdx === idx}
+                        >
+                            {item.label}
+                        </option>
+                    ))}
+                </select>
 
-export default MagdaPluginComponentExtraVisualisationSection;
+                <button className="button"> Option in New Window </button>
+            </div>
+            <img src={thumbnailUrl} alt="thumbnail image" />
+        </div>
+    );
+};
+
+const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
+    const { dataset, config, distributionId } = props;
+    const { identifier: datasetId } = dataset;
+    const { registryApiReadOnlyBaseUrl } = config;
+
+    if (!distributionId) {
+        // this plugin will not be enabled on dataset page
+        // as we don't
+        return null;
+    }
+
+    if (dataset.sourceDetails?.id !== "dap") {
+        return null;
+    }
+
+    const fileId = dataset.distributions
+        ?.find((dis) => dis.identifier === distributionId)
+        ?.identifier?.replace(/[^0-9]/g, "");
+
+    const {
+        result: files,
+        loading,
+        error
+    } = useAsync(
+        async (datasetId: string) => {
+            const dapDatasetData = await requestJson<CollectionResponse>(
+                `${registryApiReadOnlyBaseUrl}records/${encodeURIComponent(
+                    datasetId
+                )}/aspects/dap-dataset`
+            );
+            if (!dapDatasetData.data) {
+                throw new Error("Cannot locate data files.");
+            }
+            const collectionFilesData =
+                await requestJson<CollectionFilesResponse>(
+                    dapDatasetData.data,
+                    undefined,
+                    true
+                );
+            const files = collectionFilesData?.file?.filter(
+                (item) =>
+                    item.smallThumbnail ||
+                    item.mediumThumbnail ||
+                    item.largeThumbnail ||
+                    item.largeThumbnail
+            );
+            return files;
+        },
+        [datasetId]
+    );
+    const file = files?.find((item) => String(item.id) == fileId);
+
+    return (
+        <div className="no-print">
+            <h3 className="section-heading">Thumbnail Viewer</h3>
+            {loading ? (
+                "Loading..."
+            ) : error ? (
+                <p>Error: {String(error)}</p>
+            ) : !files?.length ? (
+                "No thumbnail available."
+            ) : (
+                <FileThumbnailViewer file={file} />
+            )}
+        </div>
+    );
+};
+
+export default DAPThumbnailViewer;

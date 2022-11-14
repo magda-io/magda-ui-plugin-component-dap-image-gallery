@@ -9,7 +9,7 @@ ReactDOM.render(
     <BrowserRouter>
         <div>
             <div>
-                <h2>Open 3D Dataset Button On Dataset Page:</h2>
+                <h2>DAP Thumbnail Viewer On Dataset Page:</h2>
                 <div>
                     <MagdaPluginComponentExtraVisualisationSection
                         isFetchingWhoAmI={false}
@@ -22,13 +22,13 @@ ReactDOM.render(
                         history={{} as any}
                         location={{} as any}
                         match={{} as any}
-                        dataset={sampleDatasetData}
+                        dataset={sampleDatasetData as any}
                     />
                 </div>
             </div>
             <div>
                 <h2>
-                    Open 3D Dataset Button On Distribution Page With 3D Dataset:
+                    DAP Thumbnail Viewer On Distribution Page with Thumbnail:
                 </h2>
                 <div>
                     <MagdaPluginComponentExtraVisualisationSection
@@ -42,17 +42,14 @@ ReactDOM.render(
                         history={{} as any}
                         location={{} as any}
                         match={{} as any}
-                        dataset={sampleDatasetData}
-                        distributionId={
-                            "dist-nsw-ckan-416d8baf-cd0e-45d7-8797-4fc87fc74ffd"
-                        }
+                        dataset={sampleDatasetData as any}
+                        distributionId={"dist-dap-13381115"}
                     />
                 </div>
             </div>
             <div>
                 <h2>
-                    Open 3D Dataset Button On Distribution Page Without 3D
-                    Dataset:
+                    DAP Thumbnail Viewer On Distribution Page without Thumbnail:
                 </h2>
                 <div>
                     <MagdaPluginComponentExtraVisualisationSection
@@ -66,10 +63,8 @@ ReactDOM.render(
                         history={{} as any}
                         location={{} as any}
                         match={{} as any}
-                        dataset={sampleDatasetData}
-                        distributionId={
-                            "dist-nsw-ckan-dfe942fc-6d8c-45ff-8482-096f75ceb9b7"
-                        }
+                        dataset={sampleDatasetData as any}
+                        distributionId={"dist-dap-13381115"}
                     />
                 </div>
             </div>

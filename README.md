@@ -1,6 +1,6 @@
-# magda-ui-plugin-component-dap-thumbnail-viewer
+# Magda UI Plugin Component DAP Thumbnail Viewer
 
-A Magda UI Plugin Component that allows users to view the thumbnails of the files / distributions of datasets that are harvested from CSIRO DAP system.
+A Magda UI Plugin Component that allows users to view the thumbnails of the files / distributions that are harvested from CSIRO DAP system.
 
 This plugin requires Magda v2.2.0 or higher.
 

@@ -1,23 +1,29 @@
 {
-    "identifier": "ds-nsw-ckan-febaec26-481e-4b5a-b52d-daa927b6e7cf",
-    "title": "Buildings 3D",
-    "description:": "test 3D dataset",
-    "issuedDate": "14/08/2020",
-    "updatedDate": "01/07/2021",
-    "landingPage": "https://portal.spatial.nsw.gov.au/portal/home/item.html?id=66895723791f4812b823d70637616bcb",
-    "tags": ["3D", "Buildings", "Digital Twin", "PSMA", "Shells"],
+    "identifier": "ds-dap-csiro:53623",
+    "title": "Microstructure of a Commercial 316L Stainless-Steel Sample",
+    "issuedDate": "21/01/2022",
+    "landingPage": "https://data.csiro.au/collection/csiro:53623",
+    "contactPoint": "Yang, Sam; Wang, Haipeng; Wang, Jinxiu; Wang, Runhua; Li, Jianli; Liu, Rui (2022): Microstructure of a Commercial 316L Stainless-Steel Sample. v1. CSIRO. Data Collection. https://doi.org/10.25919/6hhb-7w51",
+    "tags": [
+        "Stainless steel 316L",
+        " microstructure",
+        " X-ray CT",
+        " data-constrained modelling",
+        " DCM"
+    ],
+    "description": "The sample used in this study was a commercial 316Lstainless-steel bar. The X-ray CT specimen was machined to a cylindrical shape with a length of 1cm and diameter of 2mm. The sample surface was polished by hand with a sandpaper.  The X-ray projection images of the specimen was acquired using a Sanying Precision Engineering nanoVoxel-3000H microfocus X-ray CT machine. The CT slices have been analyzed using the DCM software.\n\nThe metadata and files (if any) are available to the public.\n\n",
     "distributions": [
         {
-            "identifier": "dist-nsw-ckan-416d8baf-cd0e-45d7-8797-4fc87fc74ffd",
-            "title": "416d8baf-cd0e-45d7-8797-4fc87fc74ffd",
-            "downloadURL": "https://portal.spatial.nsw.gov.au/i3s/rest/services/Hosted/CSP/Buildings3D/SceneServer",
-            "accessURL": null,
-            "format": "ESRI SCENESERVER",
-            "license": "License Not Specified",
+            "identifier": "dist-dap-13380861",
+            "title": "CT_Slices/ID-SS316L-0h0300.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
             "description": "No description provided",
             "linkStatusAvailable": true,
             "linkActive": true,
-            "updatedDate": null,
+            "updatedDate": "19/01/2022",
             "isTimeSeries": false,
             "compatiblePreviews": {
                 "map": false,
@@ -37,39 +43,27 @@
                 "compatiblePreviews": null
             },
             "sourceDetails": {
-                "id": "nsw-ckan",
-                "name": "data.nsw.gov.au",
-                "type": "ckan-resource",
-                "url": "https://data.nsw.gov.au/data/api/3/action/resource_show?id=416d8baf-cd0e-45d7-8797-4fc87fc74ffd"
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380861"
             },
-            "ckanResource": {
-                "created": "2019-11-14T00:49:12",
-                "datastore_active": false,
-                "datastore_contains_all_records_of_source_file": false,
-                "format": "ARCGIS REST SERVICE",
-                "hash": "",
-                "id": "416d8baf-cd0e-45d7-8797-4fc87fc74ffd",
-                "metadata_modified": "2021-06-30T14:22:51.496460",
-                "package_id": "febaec26-481e-4b5a-b52d-daa927b6e7cf",
-                "position": 0,
-                "state": "active",
-                "url": "https://portal.spatial.nsw.gov.au/i3s/rest/services/Hosted/CSP/Buildings3D/SceneServer"
-            }
+            "byteSize": 4000191
         },
         {
-            "identifier": "dist-nsw-ckan-dfe942fc-6d8c-45ff-8482-096f75ceb9b7",
-            "title": "dfe942fc-6d8c-45ff-8482-096f75ceb9b7",
-            "downloadURL": "https://portal.spatial.nsw.gov.au/i3s/rest/services/Hosted/CSP/Buildings3D/SceneServer/WMSServer?request=GetCapabilities&service=WMS",
-            "accessURL": null,
-            "format": "WMS",
-            "license": "License Not Specified",
+            "identifier": "dist-dap-13381115",
+            "title": "CT_Slices/ID-SS316L-0h0301.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
             "description": "No description provided",
             "linkStatusAvailable": true,
-            "linkActive": false,
-            "updatedDate": null,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
             "isTimeSeries": false,
             "compatiblePreviews": {
-                "map": true,
+                "map": false,
                 "chart": false,
                 "table": false,
                 "json": false,
@@ -86,62 +80,1122 @@
                 "compatiblePreviews": null
             },
             "sourceDetails": {
-                "id": "nsw-ckan",
-                "name": "data.nsw.gov.au",
-                "type": "ckan-resource",
-                "url": "https://data.nsw.gov.au/data/api/3/action/resource_show?id=dfe942fc-6d8c-45ff-8482-096f75ceb9b7"
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381115"
             },
-            "ckanResource": {
-                "created": "2019-11-14T00:49:12",
-                "datastore_active": false,
-                "datastore_contains_all_records_of_source_file": false,
-                "format": "WMS",
-                "hash": "",
-                "id": "dfe942fc-6d8c-45ff-8482-096f75ceb9b7",
-                "metadata_modified": "2021-06-30T14:22:51.496616",
-                "package_id": "febaec26-481e-4b5a-b52d-daa927b6e7cf",
-                "position": 1,
-                "state": "active",
-                "url": "https://portal.spatial.nsw.gov.au/i3s/rest/services/Hosted/CSP/Buildings3D/SceneServer/WMSServer?request=GetCapabilities&service=WMS"
-            }
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380619",
+            "title": "CT_Slices/ID-SS316L-0h0302.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380619"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381143",
+            "title": "CT_Slices/ID-SS316L-0h0303.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381143"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381567",
+            "title": "CT_Slices/ID-SS316L-0h0304.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381567"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381406",
+            "title": "CT_Slices/ID-SS316L-0h0305.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381406"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381147",
+            "title": "CT_Slices/ID-SS316L-0h0306.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381147"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380754",
+            "title": "CT_Slices/ID-SS316L-0h0307.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380754"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381291",
+            "title": "CT_Slices/ID-SS316L-0h0308.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381291"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381317",
+            "title": "CT_Slices/ID-SS316L-0h0309.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381317"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380620",
+            "title": "CT_Slices/ID-SS316L-0h0310.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380620"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381152",
+            "title": "CT_Slices/ID-SS316L-0h0311.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381152"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381566",
+            "title": "CT_Slices/ID-SS316L-0h0312.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381566"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381579",
+            "title": "CT_Slices/ID-SS316L-0h0313.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381579"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381319",
+            "title": "CT_Slices/ID-SS316L-0h0314.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381319"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381264",
+            "title": "CT_Slices/ID-SS316L-0h0315.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381264"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380621",
+            "title": "CT_Slices/ID-SS316L-0h0316.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380621"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381453",
+            "title": "CT_Slices/ID-SS316L-0h0317.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381453"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381137",
+            "title": "CT_Slices/ID-SS316L-0h0318.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381137"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381521",
+            "title": "CT_Slices/ID-SS316L-0h0319.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381521"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380868",
+            "title": "CT_Slices/ID-SS316L-0h0320.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380868"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380891",
+            "title": "CT_Slices/ID-SS316L-0h0321.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380891"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381545",
+            "title": "CT_Slices/ID-SS316L-0h0322.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381545"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13381122",
+            "title": "CT_Slices/ID-SS316L-0h0323.tif",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "TIFF",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13381122"
+            },
+            "byteSize": 4000191
+        },
+        {
+            "identifier": "dist-dap-13380616",
+            "title": "DCM_Data/SS316L.dcm",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "OCTET-STREAM",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380616"
+            },
+            "byteSize": 3834674932
+        },
+        {
+            "identifier": "dist-dap-13380588",
+            "title": "Readme.docx",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "VND",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380588"
+            },
+            "byteSize": 26811
+        },
+        {
+            "identifier": "dist-dap-13380589",
+            "title": "SS316L.jpg",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "JPEG",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380589"
+            },
+            "byteSize": 223343
+        },
+        {
+            "identifier": "dist-dap-13380590",
+            "title": "Web3D/SS316L.xhtml",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "XHTML",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380590"
+            },
+            "byteSize": 6645
+        },
+        {
+            "identifier": "dist-dap-13380615",
+            "title": "Web3D/SS316L_dcm1.js",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "JAVASCRIPT",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380615"
+            },
+            "byteSize": 10656
+        },
+        {
+            "identifier": "dist-dap-13380594",
+            "title": "Web3D/css/dcm103.css",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "CSS",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380594"
+            },
+            "byteSize": 2637
+        },
+        {
+            "identifier": "dist-dap-13380597",
+            "title": "Web3D/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png",
+            "downloadURL": null,
+            "accessURL": "https://data.csiro.au/collection/csiro:53623",
+            "format": "PNG",
+            "license": "Creative Commons Attribution-No Derivatives 4.0 International Licence",
+            "description": "No description provided",
+            "linkStatusAvailable": true,
+            "linkActive": true,
+            "updatedDate": "19/01/2022",
+            "isTimeSeries": false,
+            "compatiblePreviews": {
+                "map": false,
+                "chart": false,
+                "table": false,
+                "json": false,
+                "html": false,
+                "text": false,
+                "rss": false,
+                "google": false
+            },
+            "visualizationInfo": {
+                "fields": {},
+                "format": null,
+                "timeseries": false,
+                "wellFormed": false,
+                "compatiblePreviews": null
+            },
+            "sourceDetails": {
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-resource",
+                "url": "https://data.csiro.au/dap/ws/v2/collections/data?id=13380597"
+            },
+            "byteSize": 418
         }
     ],
-    "source": "data.nsw.gov.au",
-    "temporalCoverage": {
-        "intervals": []
-    },
+    "source": "CSIRO",
+    "temporalCoverage": { "intervals": [] },
     "publisher": {
         "aspects": {
             "organization-details": {
-                "description": "Spatial Services, a division of the Department of Finance, Service and Innovation, is the key provider of spatial land information services in New South Wales.\r\n\r\nAuthoritative land information is a vital tool that enables the community, business and government to derive maximum benefit from land and property to generate economic growth and prosperity.\r\n\r\nSpatial Services' integrated framework connects the people of NSW to a comprehensive package of land and property services including property information, surveying and mapping. Spatial Services' provides land information services to individuals, businesses, government agencies and non-profit organisations throughout NSW, Australia and internationally.\r\nSpatial Services:\r\n\r\n•\tsources information from organisations and individuals to compile maps, databases and information\r\n\r\n•\tprovides services to the Surveyor General who has responsibilities for administering various Acts of Parliament\r\n\r\n•\tmakes information available to the public and organisations for land management purposes, for state economic and social development and for planning and providing government services to the community, including event and emergency management\r\n\r\n•\tlicenses, sells, exchanges or gives the data it collects to organisations or individuals, to facilitate the above purposes.\r\n\r\nSee: http://spatialservices.finance.nsw.gov.au/\r\n",
-                "imageUrl": "https://data.nsw.gov.au/data/uploads/group/2019-01-30-060343.2257221.jpg",
-                "jurisdiction": "Commonwealth of Australia",
-                "name": "dfsi-spatial-services",
-                "title": "Spatial Services (DFSI)"
+                "description": "The Commonwealth Scientific and Industrial Research Organisation (CSIRO) is Australia's national science agency and one of the largest and most diverse research agencies in the world. The CSIRO Data Access Portal provides access to research data, software and other digital assets published by CSIRO across a range of disciplines. The portal is maintained by CSIRO Information Management & Technology to facilitate sharing and reuse.",
+                "email": "CSIROEnquiries@csiro.au",
+                "identifier": "CSIRO",
+                "imageUrl": "https://data.csiro.au/dap/resources-2.6.6/images/csiro_logo.png",
+                "name": "The Commonwealth Scientific and Industrial Research Organisation",
+                "phone": "1300 363 400",
+                "title": "The Commonwealth Scientific and Industrial Research Organisation",
+                "website": "https://data.csiro.au/"
             },
             "source": {
-                "id": "nsw-ckan",
-                "name": "data.nsw.gov.au",
-                "type": "ckan-organization",
-                "url": "https://data.nsw.gov.au/data/api/3/action/organization_show?id=cdf38dd0-3659-4abd-a017-07208a594715"
+                "id": "dap",
+                "name": "CSIRO",
+                "type": "dap-organization",
+                "url": "https://data.csiro.au"
             }
         },
-        "id": "org-nsw-ckan-cdf38dd0-3659-4abd-a017-07208a594715",
-        "name": "Spatial Services (DFSI)"
+        "id": "org-dap-CSIRO",
+        "name": "The Commonwealth Scientific and Industrial Research Organisation"
     },
-    "linkedDataRating": 0,
+    "linkedDataRating": 0.8,
     "hasQuality": true,
     "themes": [],
     "sourceDetails": {
-        "id": "nsw-ckan",
-        "name": "data.nsw.gov.au",
-        "originalName": "Spatial",
-        "originalUrl": "https://portal.spatial.nsw.gov.au/portal/home/item.html?id=66895723791f4812b823d70637616bcb",
-        "type": "ckan-dataset",
-        "url": "https://data.nsw.gov.au/data/api/3/action/package_show?id=febaec26-481e-4b5a-b52d-daa927b6e7cf"
+        "id": "dap",
+        "name": "CSIRO",
+        "type": "dap-dataset",
+        "url": "https://data.csiro.au/dap/ws/v2/collections/csiro:53623"
     },
     "provenance": {},
-    "temporalExtent": {},
+    "temporalExtent": { "end": "2021-12-23", "start": "" },
     "informationSecurity": {},
     "accrualPeriodicity": "",
     "accrualPeriodicityRecurrenceRule": "",

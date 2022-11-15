@@ -1,16 +1,26 @@
-import React, { FunctionComponent, useState } from "react";
+import React from "react";
+import { CollectionResponse, CollectionFilesResponse, File } from "./DapTypes";
 import { ExtraVisualisationSectionComponentType } from "@magda/external-ui-plugin-sdk";
 import { useAsync } from "react-async-hook";
 import requestJson from "./requestJson";
-import { CollectionResponse, CollectionFilesResponse, File } from "./DapTypes";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/scss/image-gallery.scss";
 
-const FileThumbnailViewer: FunctionComponent<{ file: File }> = (props) => {
-    const { file } = props;
-    const [idx, setIdx] = useState<number>(0);
-    const thumbnails: {
-        label: string;
-        url: string;
-    }[] = [];
+interface ImageItem {
+    label: string;
+    url: string;
+}
+
+/**
+ * Get all possible image thumbnails for a file.
+ * The result array in order of from small size to full size.
+ *
+ * @param {File} file
+ * @return {*}  {ImageItem[]}
+ */
+function getImages(file: File): ImageItem[] {
+    const thumbnails: ImageItem[] = [];
+
     if (file?.smallThumbnail) {
         thumbnails.push({
             label: "Small",
@@ -35,70 +45,42 @@ const FileThumbnailViewer: FunctionComponent<{ file: File }> = (props) => {
             url: file.fullThumbnail
         });
     }
+    return thumbnails;
+}
 
-    const thumbnailUrl = thumbnails?.[idx] ? thumbnails[idx].url : "";
-    console.log("thumbnails idx: ", idx, "thumbnailUrl: ", thumbnailUrl);
-    return (
-        <div
-            style={{
-                width: "100%",
-                height: "440px"
-            }}
-        >
-            <div
-                style={{
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column"
-                }}
-            >
-                <select
-                    placeholder="Please select thumbnail..."
-                    onChange={(e) => setIdx(parseInt(e.target.value))}
-                >
-                    {thumbnails.map((item, itemIdx) => (
-                        <option
-                            key={itemIdx}
-                            value={itemIdx}
-                            selected={itemIdx === idx}
-                        >
-                            {item.label}
-                        </option>
-                    ))}
-                </select>
-
-                <button className="button"> Option in New Window </button>
-            </div>
-            <img src={thumbnailUrl} alt="thumbnail image" />
-        </div>
-    );
-};
+/**
+ * Pick two images from all possible images
+ * One for the smallest size (use as thumbnail).
+ * One used for full size preview.
+ *
+ * @param {ImageItem[]} images
+ * @return {*}  {ImageItem[]}
+ */
+function pick2Images(images: ImageItem[]): ImageItem[] {
+    if (images?.length >= 2) {
+        return [images[0], images[images.length - 1]];
+    } else if (images.length > 0) {
+        return [images[0], images[0]];
+    } else {
+        return [] as ImageItem[];
+    }
+}
 
 const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
     const { dataset, config, distributionId } = props;
     const { identifier: datasetId } = dataset;
     const { registryApiReadOnlyBaseUrl } = config;
 
-    if (!distributionId) {
-        // this plugin will not be enabled on dataset page
-        // as we don't
-        return null;
-    }
-
     if (dataset.sourceDetails?.id !== "dap") {
         return null;
     }
 
-    const fileId = dataset.distributions
-        ?.find((dis) => dis.identifier === distributionId)
-        ?.identifier?.replace(/[^0-9]/g, "");
-
     const {
-        result: files,
+        result: galleryItems,
         loading,
         error
     } = useAsync(
-        async (datasetId: string) => {
+        async (datasetId: string, distributionId?: string) => {
             const dapDatasetData = await requestJson<CollectionResponse>(
                 `${registryApiReadOnlyBaseUrl}records/${encodeURIComponent(
                     datasetId
@@ -108,23 +90,44 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
                 throw new Error("Cannot locate data files.");
             }
             const collectionFilesData =
-                await requestJson<CollectionFilesResponse>(
-                    dapDatasetData.data,
-                    undefined,
-                    true
-                );
-            const files = collectionFilesData?.file?.filter(
-                (item) =>
-                    item.smallThumbnail ||
-                    item.mediumThumbnail ||
-                    item.largeThumbnail ||
-                    item.largeThumbnail
-            );
-            return files;
+                await requestJson<CollectionFilesResponse>(dapDatasetData.data);
+
+            let files = collectionFilesData?.file;
+            if (distributionId) {
+                // on distribution page, we only show one item for current file.
+                const fileId = dataset.distributions
+                    ?.find((dis) => dis.identifier === distributionId)
+                    ?.identifier?.replace(/[^0-9]/g, "");
+                files = files?.filter((item) => String(item.id) == fileId);
+            }
+
+            const galleryItems = files
+                ?.filter(
+                    (item) =>
+                        item.smallThumbnail ||
+                        item.mediumThumbnail ||
+                        item.largeThumbnail ||
+                        item.largeThumbnail
+                )
+                ?.map((file) => {
+                    const images = pick2Images(getImages(file));
+                    if (!images?.length) {
+                        return null;
+                    }
+                    const galleryItem = {
+                        original: images[1].url,
+                        thumbnail: images[0].url,
+                        originalTitle: `${file.filename} (${images[1].label}})`,
+                        thumbnailTitle: `${file.filename} (${images[0].label}})`,
+                        thumbnailLabel: images[0].label
+                    };
+                    return galleryItem;
+                })
+                ?.filter((item) => !!item);
+            return galleryItems?.length ? galleryItems : [];
         },
-        [datasetId]
+        [datasetId, distributionId]
     );
-    const file = files?.find((item) => String(item.id) == fileId);
 
     return (
         <div className="no-print">
@@ -133,10 +136,14 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
                 "Loading..."
             ) : error ? (
                 <p>Error: {String(error)}</p>
-            ) : !files?.length ? (
+            ) : !galleryItems?.length ? (
                 "No thumbnail available."
             ) : (
-                <FileThumbnailViewer file={file} />
+                <ImageGallery
+                    items={galleryItems}
+                    showIndex={true}
+                    lazyLoad={true}
+                />
             )}
         </div>
     );

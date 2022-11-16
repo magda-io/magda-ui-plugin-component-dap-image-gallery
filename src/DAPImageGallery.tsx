@@ -159,7 +159,7 @@ const DAPImageGallery: ExtraVisualisationSectionComponentType = (props) => {
                     showPlayButton={false}
                     thumbnailPosition="bottom"
                     showNav={true}
-                    useTranslate3D={false}
+                    useTranslate3D={true}
                 />
             )}
         </div>

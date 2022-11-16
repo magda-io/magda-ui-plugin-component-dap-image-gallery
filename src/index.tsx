@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { user, config } from "./defaultData";
 import sampleDatasetData from "./sampleDataset.json";
-import MagdaPluginComponentExtraVisualisationSection from "./MagdaPluginComponentExtraVisualisationSection";
+import DAPImageGallery from "./DAPImageGallery";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -11,7 +11,7 @@ ReactDOM.render(
             <div>
                 <h2>DAP Thumbnail Viewer On Dataset Page:</h2>
                 <div>
-                    <MagdaPluginComponentExtraVisualisationSection
+                    <DAPImageGallery
                         isFetchingWhoAmI={false}
                         whoAmIError={null}
                         user={user}
@@ -23,6 +23,48 @@ ReactDOM.render(
                         location={{} as any}
                         match={{} as any}
                         dataset={sampleDatasetData as any}
+                    />
+                </div>
+            </div>
+            <div>
+                <h2>
+                    DAP Thumbnail Viewer On Distribution Page with Thumbnail:
+                </h2>
+                <div>
+                    <DAPImageGallery
+                        isFetchingWhoAmI={false}
+                        whoAmIError={null}
+                        user={user}
+                        config={config}
+                        requestSignOut={() => Promise.resolve()}
+                        requestWhoAmI={() => Promise.resolve()}
+                        fetchContent={() => Promise.resolve()}
+                        history={{} as any}
+                        location={{} as any}
+                        match={{} as any}
+                        dataset={sampleDatasetData as any}
+                        distributionId={"dist-dap-13381115"}
+                    />
+                </div>
+            </div>
+            <div>
+                <h2>
+                    DAP Thumbnail Viewer On Distribution Page without Thumbnail:
+                </h2>
+                <div>
+                    <DAPImageGallery
+                        isFetchingWhoAmI={false}
+                        whoAmIError={null}
+                        user={user}
+                        config={config}
+                        requestSignOut={() => Promise.resolve()}
+                        requestWhoAmI={() => Promise.resolve()}
+                        fetchContent={() => Promise.resolve()}
+                        history={{} as any}
+                        location={{} as any}
+                        match={{} as any}
+                        dataset={sampleDatasetData as any}
+                        distributionId={"dist-dap-133811153323"}
                     />
                 </div>
             </div>

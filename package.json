@@ -1,9 +1,9 @@
 {
-  "name": "magda-ui-plugin-component-dap-thumbnail-viewer",
+  "name": "magda-ui-plugin-component-dap-image-gallery",
   "version": "1.0.0",
-  "description": "Magda Plugin UI Component DAP Thumbnail Viewer",
+  "description": "Magda Plugin UI Component DAP Image Gallery",
   "main": "index.js",
-  "repository": "https://github.com/magda-io/magda-ui-plugin-component-dap-thumbnail-viewer",
+  "repository": "https://github.com/magda-io/magda-ui-plugin-component-dap-image-gallery",
   "author": "Jacky Jiang <jacky.jiang@data61.csiro.au>",
   "license": "Apache-2.0",
   "private": true,

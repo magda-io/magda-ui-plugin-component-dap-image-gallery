@@ -6,11 +6,11 @@ const configFile = path.resolve(__dirname, "./tsconfig.json");
 
 module.exports = {
     entry: {
-        MagdaPluginComponentExtraVisualisationSection: {
-            import: "./src/MagdaPluginComponentExtraVisualisationSection.tsx",
+        DAPImageGallery: {
+            import: "./src/DAPImageGallery.tsx",
             filename: "[name].js",
             library: {
-                name: ["[name]","DAPThumbnailViewer"],
+                name: ["MagdaPluginComponentExtraVisualisationSection","DAPImageGallery"],
                 type: "umd",
                 umdNamedDefine: true
             }

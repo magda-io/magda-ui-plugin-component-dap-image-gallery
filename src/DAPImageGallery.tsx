@@ -4,7 +4,7 @@ import { ExtraVisualisationSectionComponentType } from "@magda/external-ui-plugi
 import { useAsync } from "react-async-hook";
 import requestJson from "./requestJson";
 import ImageGallery from "react-image-gallery";
-import "./MagdaPluginComponentExtraVisualisationSection.scss";
+import "./DAPImageGallery.scss";
 
 interface ImageItem {
     label: string;
@@ -66,7 +66,7 @@ function pick2Images(images: ImageItem[]): ImageItem[] {
     }
 }
 
-const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
+const DAPImageGallery: ExtraVisualisationSectionComponentType = (props) => {
     const { dataset, config, distributionId } = props;
     const { identifier: datasetId } = dataset;
     const { registryApiReadOnlyBaseUrl } = config;
@@ -143,13 +143,13 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
 
     return (
         <div className="no-print magda-plugin-component-dap-thumbnail-viewer">
-            <h3 className="section-heading">Thumbnail Viewer</h3>
+            <h3 className="section-heading">Image Gallery</h3>
             {loading ? (
                 "Loading..."
             ) : error ? (
                 <p>Error: {String(error)}</p>
             ) : !galleryItems?.length ? (
-                "No thumbnail available."
+                "No preview image available."
             ) : (
                 <ImageGallery
                     items={galleryItems}
@@ -166,4 +166,4 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
     );
 };
 
-export default DAPThumbnailViewer;
+export default DAPImageGallery;

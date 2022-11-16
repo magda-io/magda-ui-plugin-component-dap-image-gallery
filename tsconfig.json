@@ -2,9 +2,10 @@
     "extends": "./tsconfig-global.json",
     "compilerOptions": {
         "outDir": "./dist",
+        "declaration": false,
+        "composite": false,
         "strictNullChecks": false,
         "rootDir": "./src",
-        "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
         "target": "es2015",
         "allowJs": false,
         "esModuleInterop": true,

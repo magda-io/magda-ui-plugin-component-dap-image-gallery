@@ -4,7 +4,7 @@ import { ExtraVisualisationSectionComponentType } from "@magda/external-ui-plugi
 import { useAsync } from "react-async-hook";
 import requestJson from "./requestJson";
 import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/scss/image-gallery.scss";
+import "./MagdaPluginComponentExtraVisualisationSection.scss";
 
 interface ImageItem {
     label: string;
@@ -90,7 +90,9 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
                 throw new Error("Cannot locate data files.");
             }
             const collectionFilesData =
-                await requestJson<CollectionFilesResponse>(dapDatasetData.data);
+                await requestJson<CollectionFilesResponse>(
+                    config.proxyUrl + "_0d/" + dapDatasetData.data
+                );
 
             let files = collectionFilesData?.file;
             if (distributionId) {
@@ -114,12 +116,22 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
                     if (!images?.length) {
                         return null;
                     }
+                    const originalTitle = `${file.filename} (${images[1].label} size)`;
+                    const thumbnailTitle = `${file.filename} (${images[0].label})`;
                     const galleryItem = {
                         original: images[1].url,
                         thumbnail: images[0].url,
-                        originalTitle: `${file.filename} (${images[1].label}})`,
-                        thumbnailTitle: `${file.filename} (${images[0].label}})`,
-                        thumbnailLabel: images[0].label
+                        originalTitle,
+                        thumbnailTitle,
+                        originalAlt: originalTitle,
+                        thumbnailAlt: thumbnailTitle,
+                        description: originalTitle,
+                        originalHeight: "688px",
+                        originalWidth: "688px",
+                        thumbnailWidth: "92px",
+                        thumbnailHeight: "92px",
+                        loading: "lazy",
+                        thumbnailLoading: "lazy"
                     };
                     return galleryItem;
                 })
@@ -130,7 +142,7 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
     );
 
     return (
-        <div className="no-print">
+        <div className="no-print magda-plugin-component-dap-thumbnail-viewer">
             <h3 className="section-heading">Thumbnail Viewer</h3>
             {loading ? (
                 "Loading..."
@@ -141,8 +153,13 @@ const DAPThumbnailViewer: ExtraVisualisationSectionComponentType = (props) => {
             ) : (
                 <ImageGallery
                     items={galleryItems}
+                    infinite={false}
                     showIndex={true}
                     lazyLoad={true}
+                    showPlayButton={false}
+                    thumbnailPosition="bottom"
+                    showNav={true}
+                    useTranslate3D={false}
                 />
             )}
         </div>

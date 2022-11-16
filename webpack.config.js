@@ -10,7 +10,7 @@ module.exports = {
             import: "./src/MagdaPluginComponentExtraVisualisationSection.tsx",
             filename: "[name].js",
             library: {
-                name: "[name]",
+                name: ["[name]","DAPThumbnailViewer"],
                 type: "umd",
                 umdNamedDefine: true
             }

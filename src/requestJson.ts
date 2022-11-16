@@ -26,7 +26,6 @@ async function requestJson<T = any>(
     if (cache) {
         cacheHash[url] = data;
     }
-    console.log(data);
     return data;
 }
 

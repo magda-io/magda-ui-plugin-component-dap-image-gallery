@@ -32,7 +32,7 @@ yarn build
 ```yaml
 web-server:
   externalUIComponents:
-    - "https://exmaple.com/assets/libs/DAPImageGallery.js.js"
+    - "https://exmaple.com/assets/libs/DAPImageGallery.js"
 ```
 
 You also need to configure Magda Gateway module `CSP` config accordingly to make sure scripts from `exmaple.com` are allowed. e.g.:

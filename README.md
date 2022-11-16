@@ -55,8 +55,10 @@ gateway:
       - "blob:"
 ```
 
-For more information, please refer to this issue:
+4> As this UI plugin use [magda-preview-map](https://github.com/magda-io/magda-preview-map) as CORS resource proxy, you need to make sure the `magda-preview-map` module is disabled (by default, it will be deployed with other Magda core modules) and CSIRO DAP system domain (data.csiro.au) is on the `allowProxyFor` list (by default, the domain has been added).
 
-https://github.com/magda-io/magda/issues/3099
+To config `allowProxyFor` option of [magda-preview-map](https://github.com/magda-io/magda-preview-map), please check its helm chart document on the repo home page.
+
+
 
 

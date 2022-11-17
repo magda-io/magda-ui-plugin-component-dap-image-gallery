@@ -32,7 +32,8 @@ yarn build
 ```yaml
 web-server:
   externalUIComponents:
-    - "https://exmaple.com/assets/libs/DAPImageGallery.js"
+    # for production deployment, you will want to host the JS bundle yourself
+    - "https://github.com/magda-io/magda-ui-plugin-component-dap-image-gallery/releases/download/v1.0.0/DAPImageGallery.js"
 ```
 
 You also need to configure Magda Gateway module `CSP` config accordingly to make sure scripts from `exmaple.com` are allowed. e.g.:

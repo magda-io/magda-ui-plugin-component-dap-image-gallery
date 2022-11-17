@@ -1,0 +1,36 @@
+name: Release JS Bundle
+
+run-name: Release version ${{ github.ref_name }}
+
+on:
+  release:
+    types: [published]
+
+env:
+  CI_COMMIT_TAG: ${{ github.ref_name}}
+
+jobs:
+  build-release-js-bundle:
+    name: Build Release JS Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Version validation
+        run: |
+          SEMVER_REGEX="^v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+          [[ "${CI_COMMIT_TAG}" =~ $SEMVER_REGEX ]] || { echo "Invalid version number tag '$CI_COMMIT_TAG'. Should be e.g. 'v2.0.0-alpha.0' with a leading 'v'." ; exit 1; }
+          VER_NUM=$(echo ${CI_COMMIT_TAG} | cut -b 2-)
+          PACKAGE_JSON_VERSION=$(jq -r ".version" ./package.json)
+          [[ "${VER_NUM}" == $PACKAGE_JSON_VERSION ]] || { echo "Release version doesn't match package.json version: '$PACKAGE_JSON_VERSION'" ; exit 1; }
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: yarn install
+      - run: yarn build
+
+      - uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: dist/*

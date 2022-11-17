@@ -36,7 +36,7 @@ web-server:
     - "https://github.com/magda-io/magda-ui-plugin-component-dap-image-gallery/releases/download/v1.0.0/DAPImageGallery.js"
 ```
 
-You also need to configure Magda Gateway module `CSP` config accordingly to make sure scripts from `exmaple.com` are allowed. e.g.:
+You also need to configure Magda Gateway module `CSP` config accordingly to make sure scripts from `github.com` are allowed (or whatever domain where hosts the JS bundle). e.g.:
 
 ```yaml
 gateway:
@@ -46,8 +46,7 @@ gateway:
       scriptSrc:
       - "'self'"
       - "'unsafe-inline'"
-      - exmaple.com
-      - exmaple.com
+      - github.com
       - "blob:"
       objectSrc:
       - "'none'"

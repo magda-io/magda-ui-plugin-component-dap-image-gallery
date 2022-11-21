@@ -41,18 +41,15 @@ You also need to configure Magda Gateway module `CSP` config accordingly to make
 ```yaml
 gateway:
   csp:
-    browserSniff: false
     directives:
       scriptSrc:
       - "'self'"
       - "'unsafe-inline'"
+      - "blob:"
+      # the following two domains are for downloading Magda UI plugins from github release
       - github.com
-      - "blob:"
-      objectSrc:
-      - "'none'"
-      workerSrc:
-      - "'self'"
-      - "blob:"
+      # github.com will issue 301 redirection to this domain
+      - objects.githubusercontent.com
 ```
 
 4> As this UI plugin use [magda-preview-map](https://github.com/magda-io/magda-preview-map) as CORS resource proxy, you need to make sure the `magda-preview-map` module is disabled (by default, it will be deployed with other Magda core modules) and CSIRO DAP system domain (data.csiro.au) is on the `allowProxyFor` list (by default, the domain has been added).

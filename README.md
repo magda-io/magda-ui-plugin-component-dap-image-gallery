@@ -4,7 +4,7 @@ A Magda UI Plugin Component that allows users to preview available images that a
 
 This plugin requires Magda v2.2.0 or higher.
 
-> Since Magda v2.2.0, users can load more than one "Extra Visualisation Section" type Magda UI Plugin Components. To allow this, the component is required to be packaged as a library and exported to global scope `MagdaPluginComponentExtraVisualisationSection.xxxx`. Here, `MagdaPluginComponentExtraVisualisationSection` should be an object with key `xxxx` set to the plugin component. e.g. the DAP thumbnail viewer plugin choose to export itself to `MagdaPluginComponentExtraVisualisationSection.DAPImageGallery`.
+> Since Magda v2.2.0, users can load more than one "Extra Visualisation Section" type Magda UI Plugin Components. To allow this, the component is required to be packaged as a library and exported to global scope `MagdaPluginComponentExtraVisualisationSection.xxxx`. Here, `MagdaPluginComponentExtraVisualisationSection` should be an object with key `xxxx` set to the plugin component. e.g. the DAP Image Gallery plugin choose to export itself to `MagdaPluginComponentExtraVisualisationSection.DAPImageGallery`.
 
 
 More about Magda UI Plugin Component see: https://github.com/magda-io/magda-plugin-ui-component-examples
